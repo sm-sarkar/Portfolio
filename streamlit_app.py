@@ -5,46 +5,95 @@ with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
 #####################
-# Header 
+# Header
 st.write('''
-# Chanin Nantasenamat, Ph.D.
-##### *Resume* 
+# Shivam Sarkar
+#####       Resume 
 ''')
 
-image = Image.open('dp.png')
-st.image(image, width=150)
+image = Image.open('dp2.jpg')
+st.image(image, width=140)
 
-st.markdown('## Summary', unsafe_allow_html=True)
+# SUMMARY
+
+st.markdown('## Summary 📝', unsafe_allow_html=True)
 st.info('''
-- Experienced Educator, Researcher and Administrator with almost twenty years of experience in data-oriented environment and a passion for delivering insights based on predictive modeling. 
-- Strong verbal and written communication skills as demonstrated by extensive participation as invited speaker at `10` conferences as well as publishing 149 research articles.
-- Strong track record in scholarly research with H-index of `32` and total citation of 3200+.
+- I’ve honed my skills in software development with a strong foundation in Python and API integration. My expertise in 
+building Generative AI apps includes working with frameworks like Langchain and integrating both paid and open-source 
+models such as OpenAI, Llama2, Mistral, and Gemini. I’m also knowledgeable about HuggingFace, Ollama, and Streamlit. 
+My ongoing research on document similarity in Generative AI is enhancing my skills in statistical analysis and machine 
+learning.
+
+- Exploring the frontiers of Artificial Intelligence and Machine Learning at the National University of Singapore has 
+profoundly deepened my understanding, especially in Explainable AI, which is crucial for building trust in AI 
+applications. At the Institute of Engineering and Management, my research focuses on ecological recovery post-natural 
+calamities using advanced data analytics, driven by a commitment to sustainable technologies.
+
+- Proficient in leveraging technology to solve real-world problems, I’m eager to contribute to the Generative AI field 
+and help build Retrieval Augmented Generation Models. I look forward to exploring collaborative opportunities in 
+technology and AI. Let’s connect to discuss technology, innovation, or the latest in e-sports and gaming!
 ''')
 
 #####################
 # Navigation
 
-st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
+st.markdown(
+    '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">',
+    unsafe_allow_html=True)
 
 st.markdown("""
+<style>
+/* Add styles for the navigation bar */
+.navbar {
+    transition: top 0s;
+}
+
+.hide-nav {
+    top: -56px; /* Adjust this value based on your navbar height */
+}
+
+.show-nav {
+    top: 0;
+}
+
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script>
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+window.addEventListener('scroll', function() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        navbar.classList.add('hide-nav');
+        navbar.classList.remove('show-nav');
+    } else {
+        navbar.classList.add('show-nav');
+        navbar.classList.remove('hide-nav');
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+});
+</script>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #16A2CB;">
-  <a class="navbar-brand" href="https://youtube.com/dataprofessor" target="_blank">Chanin Nantasenamat</a>
+  <a class="navbar-brand" target="_blank">Portfolio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link disabled" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="#education">Education</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#work-experience">Work Experience</a>
+        <a class="nav-link" href="#experience">Experience</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#bioinformatics-tools">Bioinformatics Tools</a>
+        <a class="nav-link" href="#projects">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#achievements">Achievements</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#skills">Skills</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#social-media">Social Media</a>
@@ -55,162 +104,133 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 #####################
-# Custom function for printing text
-def txt(a, b):
-  col1, col2 = st.columns([4,1])
-  with col1:
-    st.markdown(a)
-  with col2:
-    st.markdown(b)
+# Sections with Anchors
 
-def txt2(a, b):
-  col1, col2 = st.columns([1,4])
-  with col1:
-    st.markdown(f'`{a}`')
-  with col2:
-    st.markdown(b)
+# EDUCATION
 
-def txt3(a, b):
-  col1, col2 = st.columns([1,2])
-  with col1:
-    st.markdown(a)
-  with col2:
-    st.markdown(b)
-  
-def txt4(a, b, c):
-  col1, col2, col3 = st.columns([1.5,2,2])
-  with col1:
-    st.markdown(f'`{a}`')
-  with col2:
-    st.markdown(b)
-  with col3:
-    st.markdown(c)
+st.markdown('<a id="education"></a>', unsafe_allow_html=True)
+st.markdown('## Education 🧠')
+# Your education content here
 
-#####################
+st.write(
+    '*Bachelor of Technology* (Computer Science, *Specialization in Artificial Intelligence*), **Institute of Engineering and Management**, Kolkata',
+    'Year: 2021-2025')
 st.markdown('''
-## Education
+- CGPA: `8.55`(Weighted Average)
 ''')
 
-txt('**Doctor of Philosophy** (Medical Technology), *Mahidol University*, Thailand',
-'2002-2006')
+st.write(
+    '*Senior School Certificate Examination* (Computer Science), **Techno India Group Public School (CBSE)**, Konnagar',
+    'Year: 2021')
 st.markdown('''
-- GPA: `3.89`
-- Research thesis entitled `Computer-aided molecular design for biological and chemical applications : Quantum chemical and machine learning approach`.
-- Received Royal Golden Jubilee Ph.D. Scholarship of `2.152 million THB` covering tuition and stipend.
-- Thesis awarded `1st` Prize by the National Research Council of Thailand.
+- Percentage: `90.0%`
 ''')
 
-txt('**Bachelors of Science** (Biological Science), *Mahidol University International College*, Thailand',
-'1998-2002')
+st.write('*Secondary School Examination* (Science), **Methodist School (ICSE)**, Dankuni',
+         'Year: 2019')
 st.markdown('''
-- GPA: `3.65`
-- Graduated with First Class Honors.
+- Percentage: `88.9%`
 ''')
 
-#####################
+
+# EXPERIENCE
+
+st.markdown('<a id="experience"></a>', unsafe_allow_html=True)
+st.markdown('## Experience 🚀')
+# Your experience content here
+
+# NATIONAL UNIVERSITY OF SINGAPORE
+st.info('''**National University of Singapore** 
+
+*Industrial Training Program (On-Site)*
+        ''')
 st.markdown('''
-## Work Experience
+- Learned about the fundamentals of Artificial Intelligence, Machine Learning, Internet of Things and Data Analytics. 
+- Comprehended *Explainable AI (XAI)* and it's importance for an organisation in building trust and confidence when putting 
+AI Models into production, along with *Interpretable Model-Agnostic  Explanations (LIME)* and how it helps to eliminate a machine learning model and to make its predictions individually comprehensible.
 ''')
 
-txt('**Head, Center of Data Mining and Biomedical Informatics**, Faculty of Medical Technology, Mahidol University, Thailand',
-'2011-2021')
+# INSTITUTE OF ENGINEERING AND MANAGEMENT
+st.info('''**Institute of Engineering and Management** 
+
+*Research Projects*
+        ''')
 st.markdown('''
-- Managing a Center of `10` professors, researchers and students to ensure KPIs are strategically achieved namely to publish at least `20+` research publications annually. 
-- Actively took part in the talent hiring process as well as help employees to plan and develop their career path.
-- Set budget and handle procurement in order to facilitate education and research activities. Secured `> 10 million THB` budget.
-- Set and reflect on OKR on an annual basis to ensure productivity strategically matches the organization's direction.
+- Post-Calamity Impact on Coastal Vegetation: Analyzing Shifts in Vegetation Indices in Google Earth Engine. 
+- Generative AI for Document Similarity: A Comparative Analysis of Jaccard and Cosine Similarity with Time Complexity Insights.
 ''')
 
-txt('**Associate Professor**, Faculty of Medical Technology, Mahidol University, Thailand',
-'2012-2021')
-txt('**Assistant Professor**, Faculty of Medical Technology, Mahidol University, Thailand',
-'2009-2012')
-txt('**Lecturer**, Faculty of Medical Technology, Mahidol University, Thailand',
-'2006-2009')
+# PROJECTS
+
+st.markdown('<a id="projects"></a>', unsafe_allow_html=True)
+st.markdown('## Projects 💻')
+# Your projects content here
+
+# NATIONAL UNIVERSITY OF SINGAPORE
+st.info('''**National University of Singapore** 
+
+*Industrial Training Program (On-Site)*
+        ''')
 st.markdown('''
-- Provided mentorship and supervision to junior faculty, researchers, Ph.D./M.Sc./B.Sc. students. Mentored `3` Post-doctoral fellows, supervised `13` Ph.D. students, supervised `8` M.Sc. students, supervised `13` B.Sc. students and hosted `6` visiting students from U.S., Sweden and India.
-- Wrote and applied for research grants. Served as Principal Investigator for research grants that have been awarded `12.5 million THB` and `1.117 million SEK` in research funding from Thai and Swedish grant agencies.
-- Conducted research by applying machine learning to computational drug discovery and ensuring that research output exceeds `20+` articles per year.
-- Taught `10+` undergraduate/graduate classes on Bioinformatics, Data Mining, Scientific Research and Presentation, Research Methodology, Graduate Seminar, Programming for Health Data Science, etc.
-- Peer reviewed `100+` research articles for leading scientific journals.
+- Learned about the fundamentals of Artificial Intelligence, Machine Learning, Internet of Things and Data Analytics. 
+- Comprehended *Explainable AI (XAI)* and it's importance for an organisation in building trust and confidence when putting 
+AI Models into production, along with *Interpretable Model-Agnostic  Explanations (LIME)* and how it helps to eliminate a machine learning model and to make its predictions individually comprehensible.
 ''')
 
-txt('**Co-Chair**, International Conference on Pharmaceutical Bioinformatics at Pattaya, Thailand',
-'2016')
-st.markdown('''
-- Oversee all aspects of the conference preparations from conception to launch. This include inviting keynote and plenary speakers, create advertisement flyers, create abstract book, etc.
-- Conference attracted `200+` participants from `40+` countries from university and industry sector.
-- Chaired keynote session, technical workshop and some of the parallel sessions.
-''')
+# ACHIEVEMENTS
 
-txt('**Content Creator**, [Data Professor YouTube Channel](https://youtube.com/dataprofessor/)',
-'2019-Present')
-st.markdown('''
-- `100,000+` subscribers on YouTube
-- Created `261` educational videos on data science, machine learning and bioinformatics as well as hosted several podcast episodes with data scientists.
-- Created `3` sponsored videos for Notion, Gradio and Classpert.
-''')
+st.markdown('<a id="achievements"></a>', unsafe_allow_html=True)
+st.markdown('## Achievements 🏆')
+# Your achievements content here
 
-txt('**Content Creator**, [Coding Professor YouTube Channel](https://youtube.com/codingprofessor/)',
-'2019-Present')
+st.info('''**Google Cloud Engineering**''')
 st.markdown('''
-- `3,200+` subscribers on YouTube
-- Created `38` educational videos on Python and R programming.
-''')
+- Learned about Cloud Architecture and Design. 
+- Scaling computing resources using Google Compute Engine (VMs).
+- Monitoring application performance and optimize cloud expenses. 
+- Earned all the essential badges of Google Cloud Practitioners Programme. [`🔗`](https://www.cloudskillsboost.google/public_profiles/d8ff3599-749c-4799-a6eb-530539923e1b)
+''', unsafe_allow_html=True)
 
-txt('**Technical Writer**, [Data Professor Blog](https://data-professor.medium.com/) on Medium.com',
-'2019-Present')
+st.info('''**Google Generative AI Study Jam**''')
 st.markdown('''
-- `4,100+` subscribers on Medium
-- Written `68` technical blogs on data science, machine learning and bioinformatics.
-''')
+- Developed Gen AI Applications with Gemini and Streamlit Frameworks.
+- Prompt designing in Vertex AI.
+- Earned all the essential badges of Google Gen AI Study Jam. [`🔗`](https://www.cloudskillsboost.google/public_profiles/f8746d60-6d37-4979-884c-7850a0c59196)
+''', unsafe_allow_html=True)
 
-#####################
+st.info('''**IEM 2024 Aptitude Test (January)**''')
 st.markdown('''
-## Bioinformatics Tools
-''')
-txt4('ABCpred', 'A web server for the discovery of acetyl- and butyryl-cholinesterase inhibitors', 'http://codes.bio/abcpred/')
-txt4('AutoWeka', 'An automated data mining software based on Weka', 'http://www.mt.mahidol.ac.th/autoweka/')
-txt4('ACPred', 'A computational tool for the prediction and analysis of anticancer peptides','http://codes.bio/acpred/')
-txt4('BioCurator', 'A web server for curating ChEMBL bioactivity data', 'http://codes.bio/biocurator/')
-txt4('CryoProtect', 'A web server for classifying antifreeze proteins from non-antifreeze proteins','http://codes.bio/cryoprotect/')
-txt4('ERpred', 'A web server for the prediction of subtype-specific estrogen receptor antagonists', 'http://codes.bio/erpred')
-txt4('HCVpred', 'A web server for predicting the bioactivity of Hepatitis C virus NS5B inhibitors', 'http://codes.bio/hemopred/')
-txt4('HemoPred', 'A web server for predicting the hemolytic activity of peptides', 'http://codes.bio/hemopred/')
-txt4('iQSP', 'A sequence-based tool for the prediction and analysis of quorum sensing peptides', 'http://codes.bio/iqsp/')
-txt4('Meta-iAVP', 'A sequence-based meta-predictor for improving the prediction of antiviral peptides', 'http://codes.bio/meta-iavp/')
-txt4('osFP', 'A web server for predicting the oligomeric state of fluorescent proteins', 'http://codes.bio/osfp/')
-txt4('PAAP', 'A web server for predicting antihypertensive activity of peptides', 'http://codes.bio/paap/')
-txt4('PepBio', 'A web server for predicting the bioactivity of host defense peptide', 'http://codes.bio/pepbio')
-txt4('PyBact', 'Open source software written in Python for bacterial identification', 'https://sourceforge.net/projects/pybact/')
-txt4('TargetAntiAngio', 'A sequence-based tool for the prediction and analysis of anti-angiogenic peptides','http://codes.bio/targetantiangio/')
-txt4('ThalPred', 'Development of decision model for discriminating Thalassemia trait and Iron deficiency anemia','http://codes.bio/thalpred/')
-txt4('THPep', 'A web server for predicting tumor homing peptides','http://codes.bio/thpep/')
+- **Achieved Rank 1** in the Aptitude Test conducted by IEM to assess cognitive abilities and skills.[`🔗`](https://drive.google.com/file/d/1HXTU6SuM7mzP_ozYGo8-oIm-NA2tAmEO/view?usp=sharing)
+''', unsafe_allow_html=True)
 
-
-#####################
+st.info('''**VALORANT**''')
 st.markdown('''
-## Skills
-''')
-txt3('Programming', '`Python`, `R`, `Linux`')
-txt3('Data processing/wrangling', '`SQL`, `pandas`, `numpy`')
-txt3('Data visualization', '`matplotlib`, `seaborn`, `plotly`, `altair`, `ggplot2`')
-txt3('Machine Learning', '`scikit-learn`')
-txt3('Deep Learning', '`TensorFlow`')
-txt3('Web development', '`Flask`, `HTML`, `CSS`')
-txt3('Model deployment', '`streamlit`, `gradio`, `R Shiny`, `Heroku`, `AWS`, `Digital Ocean`')
+- As a semi-professional e-sports player, our team emerged as the sole champions, and the only team in South Asia to 
+secure a **flawless victory** in Valorant Premiere Tournament 2024 
+[`🔗`](https://tracker.gg/valorant/premier/standings?region=AP_SOUTH_ASIA&division=6&page=1&season=a1c4f86c-49fa-97bd-019b-aa8754ca7a83)
+''', unsafe_allow_html=True)
 
-#####################
-st.markdown('''
-## Social Media
-''')
-txt2('LinkedIn', 'https://www.linkedin.com/in/chanin-nantasenamat')
-txt2('Twitter', 'https://twitter.com/thedataprof')
-txt2('GitHub', 'https://github.com/chaninn/')
-txt2('', 'https://github.com/chaninlab/')
-txt2('', 'https://github.com/dataprofessor')
-txt2('ORCID', 'http://orcid.org/0000-0003-1040-663X')
-txt2('Scopus', 'http://www.scopus.com/authid/detail.url?authorId=12039071300')
-txt2('ResearcherID', 'http://www.researcherid.com/rid/F-1021-2010')
-txt2('ResearchGate', 'https://www.researchgate.net/profile/Chanin_Nantasenamat')
-txt2('Publons', 'https://publons.com/a/303133/')
+# SKILLS
+
+st.markdown('<a id="skills"></a>', unsafe_allow_html=True)
+st.markdown('## Skills 🛠️')
+# Your skills content here
+
+st.markdown('''Programming: `Python`, `C`, `JAVA`''')
+st.markdown('''Data processing/wrangling: `pandas`, `numpy`''')
+st.markdown('''Data visualization: `matplotlib`, `seaborn`''')
+st.markdown('''Natural Language Processing: `NLTK`, `SpaCy`''')
+st.markdown('''Machine Learning: `scikit-learn''')
+st.markdown('''Deep Learning', '`TensorFlow`''')
+st.markdown('''Web development', '`Flask`, `Django`, `CSS`''')
+st.markdown('''Model deployment: `Streamlit`, `gradio`, `Heroku`, `AWS`, `Langchain`, `Langsmith`''')
+
+# SOCIAL MEDIA
+
+st.markdown('<a id="social-media"></a>', unsafe_allow_html=True)
+st.markdown('## Social Media 🌐')
+# Your social media content here
+
+st.markdown('''Email:- smsarkar2018@gmail.com''')
+st.markdown('''LinkedIn:- https://www.linkedin.com/in/shivamsarkar''')
+st.markdown('''GitHub:- https://github.com/sm-sarkar''')
