@@ -166,6 +166,12 @@ st.markdown('<a id="projects"></a>', unsafe_allow_html=True)
 st.markdown('## Projects 💻')
 # Your projects content here
 
+# VERITEXT
+st.info('''VeriText: Verify Authenticity in Every Line.''')
+st.markdown('''Designed a cutting-edge web application to detect AI-generated text with precision and ease. Using Python and the Streamlit
+framework, I created an intuitive user interface that seamlessly integrates with Langchain environment for advanced processing
+. The application leverages the open-source Llama2 model to accurately differentiate between human-written and AI-generated content.
+- Skills Used: Pytho, Streamlit, Langchain, Ollama'''
 # NATIONAL UNIVERSITY OF SINGAPORE
 st.info('''**National University of Singapore** 
 
