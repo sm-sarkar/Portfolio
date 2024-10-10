@@ -171,17 +171,20 @@ st.info('''VeriText: Verify Authenticity in Every Line.''')
 st.markdown('''Designed a cutting-edge web application to detect AI-generated text with precision and ease. Using Python and the Streamlit
 framework, I created an intuitive user interface that seamlessly integrates with Langchain environment for advanced processing
 . The application leverages the open-source Llama2 model to accurately differentiate between human-written and AI-generated content.
-- Skills Used: Pytho, Streamlit, Langchain, Ollama''')
-# NATIONAL UNIVERSITY OF SINGAPORE
-st.info('''**National University of Singapore** 
-
-*Industrial Training Program (On-Site)*
-        ''')
+- Skills Used: Python, Streamlit, Langchain, Ollama''')
+# INTELLITRIP
+st.info('''IntelliTrip: Your Journey, Perfected by AI.''')
 st.markdown('''
-- Learned about the fundamentals of Artificial Intelligence, Machine Learning, Internet of Things and Data Analytics. 
-- Comprehended *Explainable AI (XAI)* and it's importance for an organisation in building trust and confidence when putting 
-AI Models into production, along with *Interpretable Model-Agnostic  Explanations (LIME)* and how it helps to eliminate a machine learning model and to make its predictions individually comprehensible.
-''')
+Developed an innovative AI-driven application that revolutionizes travel planning. IntelliTrip uses advanced artificial intelligence to generate personalized itineraries, 
+accommodating user preferences and budget constraints. The application seamlessly integrates accommodation suggestions, activity recommendations, dining options, 
+and transportation logistics, 
+ensuring a well-rounded and stress-free travel experience.
+- Skills Used: Python, Streamlit, Langchain, Ollama''')
+# RAG PIPELINE
+st.info('''Retrieval Augmented Generation(RAG) QnA ChatBot''')
+st.markdown('''Developed} an advanced QnA ChatBot using the Langchain framework in Python, designed to retrieve and provide accurate information from user-supplied documents. 
+The application leverages Retrieval-Augmented Generation (RAG) to enhance response precision and relevance, making it an invaluable tool for document-based queries.
+- Skills Used: Python, Streamlit, Langchain, Ollama''')
 
 # ACHIEVEMENTS
 
