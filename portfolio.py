@@ -11,7 +11,7 @@ st.write('''
 #####       Resume 
 ''')
 
-image = Image.open('dp2.jpg')
+image = Image.open('DP.jpeg')
 st.image(image, width=140)
 
 # SUMMARY
